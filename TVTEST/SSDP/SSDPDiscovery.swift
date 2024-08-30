@@ -175,7 +175,6 @@ public class SSDPDiscovery: NSObject {
         ssdpQueue = DispatchQueue.main
         let socket = GCDAsyncUdpSocket(delegate: self, delegateQueue: DispatchQueue.main)
         try socket.enableBroadcast(true)
-        try socket.beginReceiving()
         try socket.bind(toPort: UInt16(SSDPDiscovery.ssdpPort))
         try socket.joinMulticastGroup(SSDPDiscovery.ssdpHost)
         
@@ -231,6 +230,7 @@ extension SSDPDiscovery {
         if let socket = self.asyncUdpSocket {
             let messageData = request.message.data(using: .utf8)!
             socket.send(messageData, toHost: SSDPDiscovery.ssdpHost, port: UInt16(SSDPDiscovery.ssdpPort), withTimeout: 1, tag: 0)
+            try! socket.beginReceiving()
         }
     }
     
@@ -254,6 +254,7 @@ extension SSDPDiscovery {
 
 extension SSDPDiscovery: GCDAsyncUdpSocketDelegate {
     public func udpSocket(_ sock: GCDAsyncUdpSocket, didConnectToAddress address: Data) {
+        print("didConnectToAddress")
     }
     
     public func udpSocket(_ sock: GCDAsyncUdpSocket, didNotConnect error: Error?) {
@@ -265,6 +266,7 @@ extension SSDPDiscovery: GCDAsyncUdpSocketDelegate {
     }
     
     public func udpSocket(_ sock: GCDAsyncUdpSocket, didSendDataWithTag tag: Int) {
+        print("didSendDataWithTag")
     }
     
     public func udpSocket(_ sock: GCDAsyncUdpSocket, didNotSendDataWithTag tag: Int, dueToError error: Error?) {
