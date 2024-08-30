@@ -176,6 +176,8 @@ public class SSDPDiscovery: NSObject {
         let socket = GCDAsyncUdpSocket(delegate: self, delegateQueue: DispatchQueue.main)
         try socket.enableBroadcast(true)
         try socket.beginReceiving()
+        try socket.bind(toPort: UInt16(SSDPDiscovery.ssdpPort))
+        try socket.joinMulticastGroup(SSDPDiscovery.ssdpHost)
         
         self.asyncUdpSocket = socket
         self.ssdpResponseQueue = ssdpQueue!
@@ -228,7 +230,7 @@ extension SSDPDiscovery {
     internal func sendRequestMessage(request: SSDPMSearchRequest) {
         if let socket = self.asyncUdpSocket {
             let messageData = request.message.data(using: .utf8)!
-            socket.send(messageData, toHost: SSDPDiscovery.ssdpHost, port: UInt16(SSDPDiscovery.ssdpPort), withTimeout: -1, tag: 1000)
+            socket.send(messageData, toHost: SSDPDiscovery.ssdpHost, port: UInt16(SSDPDiscovery.ssdpPort), withTimeout: 1, tag: 0)
         }
     }
     

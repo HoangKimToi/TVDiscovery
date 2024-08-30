@@ -19,7 +19,7 @@ class ViewController: UIViewController {
     
     @IBAction func startScan(sender: AnyObject) {
 //        let zonePlayerTarget = SSDPSearchTarget.deviceType(schema: SSDPSearchTarget.upnpOrgSchema, deviceType: "Samsung", version: 1)
-        let request = SSDPMSearchRequest(delegate: self, searchTarget: SSDPSearchTarget.all)
+        let request = SSDPMSearchRequest(delegate: self, searchTarget: SSDPSearchTarget.all, maxWait: 1)
         
         // Start a discovery session for the request and timeout after 10 seconds of searching.
         self.session = try! discovery.startDiscovery(request: request, timeout: 10.0)
