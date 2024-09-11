@@ -23,6 +23,7 @@
 		A448A29B2C80726E00F8E610 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = A448A29A2C80726E00F8E610 /* Base */; };
 		A448A29D2C80726F00F8E610 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A448A29C2C80726F00F8E610 /* Assets.xcassets */; };
 		A448A2A02C80726F00F8E610 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = A448A29F2C80726F00F8E610 /* Base */; };
+		A4C5819F2C91472A005B8A00 /* Video1.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = A4C5819E2C91446C005B8A00 /* Video1.mp4 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +45,7 @@
 		A448A29C2C80726F00F8E610 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A448A29F2C80726F00F8E610 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A448A2A12C80726F00F8E610 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A4C5819E2C91446C005B8A00 /* Video1.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = Video1.mp4; sourceTree = "<group>"; };
 		DE50FB015AAC2D1D47C746B5 /* Pods-TVTEST.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TVTEST.release.xcconfig"; path = "Target Support Files/Pods-TVTEST/Pods-TVTEST.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -104,6 +106,7 @@
 		A448A2922C80726E00F8E610 /* TVTEST */ = {
 			isa = PBXGroup;
 			children = (
+				A4C5819E2C91446C005B8A00 /* Video1.mp4 */,
 				A43A0F192C817D570091AF83 /* SSDP */,
 				A448A2932C80726E00F8E610 /* AppDelegate.swift */,
 				A448A2952C80726E00F8E610 /* SceneDelegate.swift */,
@@ -192,6 +195,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A448A29D2C80726F00F8E610 /* Assets.xcassets in Resources */,
+				A4C5819F2C91472A005B8A00 /* Video1.mp4 in Resources */,
 				A448A2A02C80726F00F8E610 /* Base in Resources */,
 				A448A29B2C80726E00F8E610 /* Base in Resources */,
 			);
